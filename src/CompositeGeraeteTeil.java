@@ -4,10 +4,12 @@ import java.util.List;
 public class CompositeGeraeteTeil implements GerateTeil {
 
     private List<GerateTeil> childGerateTeil = new ArrayList<>();
-    private int gesamtGewicht = 0;
+    private int gesamtGewicht;
 
     @Override
     public int printTotalWeight() {
+        gesamtGewicht = 0;
+
         for (GerateTeil gerateTeil : childGerateTeil) {
            gesamtGewicht += gerateTeil.printTotalWeight();
         }
